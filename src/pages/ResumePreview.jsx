@@ -19,7 +19,7 @@ function ResumePreview() {
                 let width = pdf.internal.pageSize.getWidth()
                 let height = pdf.internal.pageSize.getHeight()
                 pdf.addImage(imgData, 'PNG', 0, 0, width, height)
-                pdf.save('john.pdf')
+                pdf.save('resume.pdf')
         }).catch(error =>{
             console.log('Error', error);
         })

@@ -42,10 +42,11 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       experiences.length > 0 &&
-      experiences.map(experience => {
-        return <div className="experiences" key={experience.company}>
+      <div className="experiences" >
           <h2>Experiences</h2>
-          <div className="experience flex-container">
+      {
+      experiences.map(experience => {
+        return <div key={experience.company} className="experience flex-container">
             <div className="duration flex-1 left-align">
               <p className="fn-bold">{experience.start_date.month}. {experience.start_date.year} - {experience.currentStatus ? "current" : <>{experience.end_date.month}. {experience.end_date.year} </>}</p>
               <p className="fn-bold">{experience.city} {experience.country}</p>
@@ -55,27 +56,27 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
               <p>{experience.job_description}</p>
             </div>
           </div>
+      })}
         </div>
-      })
     }
 
     {
       educations.length > 0 &&
-      educations.map(education => {
-        return <div className="educations" key={education.institute}>
+        <div className="educations">
             <h2>Education</h2>
-            <div className="education flex-container">
-              <div className="duration flex-1 left-align">
-                <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month}. {education.graduation_date.year}</>}</p>
-                <p className="fn-bold">{education.state}</p>
-              </div>
-              <div className="work flex-2">
-                <p>{education.degree}, {education.field}</p>
-                <p>{education.institute}, {education.city}, {education.state}</p>
-              </div>
-            </div>
-          </div>
-      })
+      {educations.map(education => {
+            return <div key={education.institute} className="education flex-container">
+                    <div className="duration flex-1 left-align">
+                      <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month}. {education.graduation_date.year}</>}</p>
+                      <p className="fn-bold">{education.state}</p>
+                    </div>
+                    <div className="work flex-2">
+                      <p>{education.degree}, {education.field}</p>
+                      <p>{education.institute}, {education.city}, {education.state}</p>
+                    </div>
+                  </div>
+      })}
+      </div>
 
     }
 
