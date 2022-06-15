@@ -1,16 +1,16 @@
-import React, {useRef} from 'react'
+import React, {useState} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
 function InputSummary() {
-    const {setSummary} =useResumeContext()
+    const summaryContext =useResumeContext()
     const navigate = useNavigate()
-    const summaryRef = useRef('')
+    const [summary, setSummary] = useState(summaryContext.summary)
 
     const handleSaveAndNext = () => {
-        setSummary(summaryRef.current.value)
+        summaryContext.setSummary(summary)
         navigate('/resume/resume-preview')
     }
     const handleBack = () => {
@@ -31,8 +31,8 @@ function InputSummary() {
                         multiline
                         rows={10}
                         fullWidth
-                        ref={summaryRef}
-                        onChange={e => summaryRef.current.value = e.target.value.trim()}
+                        value={summary}
+                        onChange={e => setSummary(e.target.value)}
                     />
                 </div>
             </div>

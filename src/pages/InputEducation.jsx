@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import {months, years} from '../util'
 import { useResumeContext } from '../context/ResumeDataProvider'
-
+//Looks like you haven't entered any degree. We recommend that you at least enter your past Degree and School name.
 function InputEducation() {
     const {setEducations} = useResumeContext()
     const navigate = useNavigate()

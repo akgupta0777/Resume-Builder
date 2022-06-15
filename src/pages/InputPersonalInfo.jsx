@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useState} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
@@ -8,23 +8,23 @@ function InputPersonalInfo() {
     const {personalInfo, setPersonalInfo} = useResumeContext()
     
     const navigate = useNavigate()
-    const firstNameRef = useRef()
-    const lastNameRef = useRef()
-    const addressRef = useRef()
-    const cityRef = useRef()
-    const countryRef = useRef()
-    const emailRef = useRef()
-    const phoneRef = useRef()
+    const [firstName, setFirstName] = useState(personalInfo.firstName)
+    const [lastName, setLastName] = useState(personalInfo.lastName)
+    const [address,setAddress] = useState(personalInfo.address)
+    const [city, setCity] = useState(personalInfo.city)
+    const [country, setCountry] = useState(personalInfo.country)
+    const [email, setEmail] = useState(personalInfo.email)
+    const [phone, setPhone] = useState(personalInfo.phone)
     
     const handleSaveAndNext = () => {
         setPersonalInfo({
-            firstName: firstNameRef.current.value,
-            lastName: lastNameRef.current.value,
-            address: addressRef.current.value,
-            city: cityRef.current.value,
-            country: countryRef.current.value,
-            email: emailRef.current.value,
-            phone: phoneRef.current.value,
+            firstName,
+            lastName,
+            address,
+            city,
+            country,
+            email,
+            phone
         })
         navigate('/resume/experiences')
     }
@@ -43,8 +43,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small"
                         autoComplete='off'
-                        ref={firstNameRef}
-                        onChange={e => firstNameRef.current.value = e.target.value.trim()}
+                        value={firstName}
+                        onChange={e => setFirstName(e.target.value)}
                     />
                 </div>
                 <div className="two-col-grid-item">
@@ -54,8 +54,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small" 
                         autoComplete='off'
-                        ref={lastNameRef}
-                        onChange={e => lastNameRef.current.value = e.target.value.trim()}
+                        value={lastName}
+                        onChange={e => setLastName(e.target.value)}
                     />
                 </div>
                 <div className="two-col-grid-item" style={{gridColumn: 'auto / span 2'}}>
@@ -65,8 +65,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small"
                         autoComplete='off'
-                        ref={addressRef}
-                        onChange={e => addressRef.current.value = e.target.value.trim()}
+                        value={address}
+                        onChange={e => setAddress(e.target.value)}
                     />
                 </div>
                 <div className="two-col-grid-item">
@@ -76,8 +76,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small"
                         autoComplete='off'
-                        ref={cityRef}
-                        onChange={e => cityRef.current.value = e.target.value.trim()}
+                        value={city}
+                        onChange={e => setCity(e.target.value)}
                     />
                 </div>
                 <div className="two-col-grid-item">
@@ -87,8 +87,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small" 
                         autoComplete='off'
-                        ref={countryRef}
-                        onChange={e => countryRef.current.value = e.target.value.trim()}
+                        value={country}
+                        onChange={e => setCountry(e.target.value)}
                         />
                 </div>
                 <div className="two-col-grid-item">
@@ -98,8 +98,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small" 
                         autoComplete='off'
-                        ref={emailRef}
-                        onChange={e => emailRef.current.value = e.target.value.trim()}
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="two-col-grid-item">
@@ -109,8 +109,8 @@ function InputPersonalInfo() {
                         id="outlined-size-normal" 
                         size="small" 
                         autoComplete='off'
-                        ref={phoneRef}
-                        onChange={e => phoneRef.current.value = e.target.value.trim()}
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
                     />
                 </div>
             </div>

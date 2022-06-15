@@ -1,15 +1,17 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, NavLink } from 'react-router-dom'
 import { Button } from '@mui/material'
 
 function Header() {
   const navigate = useNavigate()
   const location = useLocation()
   return (
-    <header className='header container'>
+    <header className='header'>
       <div className="logo">
-        <img src={logo} alt="LOGO" />
+        <NavLink to="/">
+          <img src={logo} alt="LOGO" />
+        </NavLink>
       </div>
       <div className="navigate">
         <div>
@@ -21,7 +23,8 @@ function Header() {
           <Button
             variant='contained'
             style={{boxShadow: 'none'}}
-            onClick={() => navigate("/resume/choose-templates")}
+            // onClick={() => navigate("/resume/choose-templates")}
+            onClick={() => navigate("/resume/personal-infos")}
           >Build Resume</Button>
         </div>
         }

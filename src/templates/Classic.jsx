@@ -85,7 +85,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
         <h2>Skills</h2>
         <div className="two-col-grid">
           {skills.map(data => {
-            return <div className="two-col-grid-item flex-container" key={data.skill_id}>
+            return <div className="two-col-grid-item flex-container skill" key={data.skill_id}>
               <p>{data.skill}</p>
               {data.level && <p>{levelsMap[data.level]}</p>}
             </div>
