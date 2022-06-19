@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
 function InputSummary() {
     const summaryContext =useResumeContext()
     const navigate = useNavigate()
+    const location = useLocation()
     const [summary, setSummary] = useState(summaryContext.summary)
 
     const handleSaveAndNext = () => {

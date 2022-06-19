@@ -13,6 +13,14 @@ function ResumeDataProvider({ children }) {
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
+  const clearContext = () => {
+    setPersonalInfo({});
+    setSummary("");
+    setEducations([]);
+    setExperiences([]);
+    setSkills([]);
+  };
+
   return (
     <ResumeContext.Provider
       value={{
@@ -26,6 +34,7 @@ function ResumeDataProvider({ children }) {
         setSummary,
         skills,
         setSkills,
+        clearContext,
       }}
     >
       {children}

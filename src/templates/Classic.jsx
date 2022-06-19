@@ -3,6 +3,7 @@ import '../App.css'
 import { levelsMap } from "../util";
 
 function Classic({personalInfo, experiences, educations, skills, summary}) {
+  console.log(experiences);
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&
@@ -46,14 +47,14 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
           <h2>Experiences</h2>
       {
       experiences.map(experience => {
-        return <div key={experience.company} className="experience flex-container">
+        return <div key={experience.id} className="experience flex-container">
             <div className="duration flex-1 left-align">
-              <p className="fn-bold">{experience.start_date.month}. {experience.start_date.year} - {experience.currentStatus ? "current" : <>{experience.end_date.month}. {experience.end_date.year} </>}</p>
-              <p className="fn-bold">{experience.city} {experience.country}</p>
+              <p className="fn-bold">{experience.start_date.month && `${experience.start_date.month}.`} {experience.start_date.year && `${experience.start_date.year}`} {experience.currentStatus ? " - current" : <>{experience.end_date.month && ` - ${experience.end_date.month}.`} {experience.end_date.year && `${experience.end_date.year}`} </>}</p>
+              <b style={{fontSize: 12, letterSpacing: 0.9}}>{experience.city && `${experience.city},`}  {experience.state && `${experience.state}`}</b>
             </div>
             <div className="work flex-2">
-              <p>{experience.job_title}, {experience.company}</p>
-              <p>{experience.job_description}</p>
+              <p><span style={{fontWeight: 300}}>{experience.job_title}</span>, {experience.company}</p>
+              <pre>{experience.job_description}</pre>
             </div>
           </div>
       })}
@@ -67,12 +68,12 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
       {educations.map(education => {
             return <div key={education.institute} className="education flex-container">
                     <div className="duration flex-1 left-align">
-                      <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month}. {education.graduation_date.year}</>}</p>
+                      <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month && `${education.graduation_date.month}.`} {education.graduation_date.year && ` - ${education.graduation_date.year}`}</>}</p>
                       <p className="fn-bold">{education.state}</p>
                     </div>
                     <div className="work flex-2">
-                      <p>{education.degree}, {education.field}</p>
-                      <p>{education.institute}, {education.city}, {education.state}</p>
+                      <p>{education.degree}{education.field && `, ${education.field}`}</p>
+                      <p>{education.institute}{education.city && `, ${education.city}`}{education.state && `, ${education.state}`}</p>
                     </div>
                   </div>
       })}
@@ -87,7 +88,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
         <div className="two-col-grid">
           {skills.map(data => {
             return <div className="two-col-grid-item flex-container skill" key={data.skill_id}>
-              <p>{data.skill}</p>
+              <p className="fn-bold">{data.skill}</p>
               {data.level && <p>{levelsMap[data.level]}</p>}
             </div>
           })}

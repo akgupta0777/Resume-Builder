@@ -62,6 +62,7 @@ export const levels = [
   { value: 3, label: "Skillful" },
   { value: 4, label: "Experienced" },
   { value: 5, label: "Expert" },
+  { value: "", label: "Don't show level" },
 ];
 
 export const levelsMap = {
@@ -70,4 +71,5 @@ export const levelsMap = {
   3: "Skillful",
   4: "Experienced",
   5: "Expert",
+  "": "",
 };

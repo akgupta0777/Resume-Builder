@@ -1,9 +1,13 @@
 import React from 'react'
 import Header from '../components/Header'
 import Classic from '../templates/Classic'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import DownloadIcon from '@mui/icons-material/Download';
-import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Option from '../components/Option';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { useResumeContext } from '../context/ResumeDataProvider';
@@ -41,15 +45,21 @@ function ResumePreview() {
                     variant='contained'
                     startIcon={<DownloadIcon />}
                     fullWidth
-                    style={{ gridColumn: "auto / span 1", padding: '12px 0' }}
+                    style={{ padding: '12px 0' }}
                     onClick={download}
                 >Download</Button>
-                <Button
-                    variant='contained'
-                    startIcon={<ModeEditOutlineIcon />}
-                    fullWidth
-                    style={{ gridColumn: "auto / span 1", padding: '12px 0' }}
-                >Edit Resume</Button>
+                <Accordion sx={{border: "2px solid #1976d2a1", boxShadow: "none"}}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon color="primary" />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                    <Typography color="primary" variant="button">EDIT RESUME</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <Option />
+                    </AccordionDetails>
+                </Accordion>
             </div>
         </div>
     </>

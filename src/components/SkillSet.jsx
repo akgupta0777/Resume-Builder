@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { 
     TextField,
     Button,
@@ -6,7 +6,7 @@ import {
 } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import { levels } from '../util';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useResumeContext } from '../context/ResumeDataProvider';
 
 const MAX_SKILLS = 8
@@ -14,6 +14,19 @@ const MAX_SKILLS = 8
 function SkillSet() {
     const setSkillsContext = useResumeContext()
     const navigate = useNavigate()
+    const location = useLocation()
+    useEffect(() => {
+      setSkillsContext.skills.length > 0 &&
+        setSkills(setSkillsContext.skills.map(data => {
+            return {
+                ...data,
+                skill: data.skill,
+                level: data.level
+            }
+        }))
+    
+    }, [])
+    
     const [skills, setSkills] = useState([
         {
             skill_id: Math.random().toString(),
@@ -53,7 +66,7 @@ function SkillSet() {
         setSkills(prevSkills => {
             return prevSkills.map(data => {
                 if(data.skill_id === id){
-                    data.skill = e.target.value.trim()
+                    data.skill = e.target.value
                 }
                 return data
             })
@@ -72,8 +85,16 @@ function SkillSet() {
     }
 
     const handleSaveAndNext = () => {
-        setSkillsContext.setSkills(skills)
-        navigate('/resume/summary')
+        const exist = skills.filter(data => data.skill || data.level)
+        exist.length > 0 ?
+            setSkillsContext.setSkills(skills) :
+            setSkillsContext.setSkills([])
+        
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/summary')
+        }
     }
     const handleBack = () => {
         navigate('/resume/educations')

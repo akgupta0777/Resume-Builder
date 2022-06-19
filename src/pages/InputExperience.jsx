@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { 
     Typography,
     TextField,
@@ -8,7 +8,7 @@ import {
     Checkbox
 } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import List from '../components/List'
 import Dialog from '@mui/material/Dialog';
@@ -24,9 +24,11 @@ const MAX_EXP = 3
 function InputPersonalInfo() {
     const {experiences, setExperiences} = useResumeContext()
     const navigate = useNavigate()
-    const [open, setOpen] = useState(false);
+    const location = useLocation()
     const [allExperiences, setAllExperiences] = useState(experiences)
-    const [active, setActive] = useState(experiences.length > 0)
+    const [open, setOpen] = useState(false);
+    // active state to open or close the form
+    const [active, setActive] = useState(experiences.length > 0) 
     const [startMonth, setStartMonth] = useState('');
     const [endMonth, setEndMonth] = useState('');
     const [startYear, setStartYear] = useState('')
@@ -37,17 +39,46 @@ function InputPersonalInfo() {
     const [state, setState] = useState('')
     const [description, setDescription] = useState('')
     const [checked, setChecked] = useState(false)
+    // mode = true -> add new data otherwise edit the data
+    const [mode, setMode] = useState(true)
+    // id of the experience to be edit
+    const [id, setId] = useState('')
 
     useEffect(() => {
       setExperiences(allExperiences)
     }, [allExperiences, setExperiences])
     
+    const editExperience = id => {
+        setId(id)
+        allExperiences.forEach((data, i) => {
+            if(data.id === id){
+                setCity(data.city)
+                setJobTitle(data.job_title)
+                setCompany(data.company)
+                setState(data.state)
+                setDescription(data.job_description)
+                setStartMonth(data.start_date.month)
+                setStartYear(data.start_date.year)
+                setEndMonth(data.end_date.month)
+                setEndYear(data.end_date.year)
+                setChecked(data.currentStatus)
+                setActive(false)
+                setMode(false)
+            }
+        })
+    }
+
+
     const handleClose = () => {
         setOpen(false);
     };
 
     const handleSaveAndNext = () => {
-        navigate('/resume/educations')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/educations')
+        }
     }
     
     const handleBack = () => {
@@ -63,7 +94,6 @@ function InputPersonalInfo() {
             return
         }
         const newData = {
-            id: Math.random().toString(),
             company,
             job_title: jobTitle,
             state,
@@ -79,20 +109,37 @@ function InputPersonalInfo() {
             },
             currentStatus: checked
         }
-        setAllExperiences(prevState => {
-            if(prevState.length === 0){
-                return [newData]
-            }
-            const newState = [...prevState]
-            newState.push(newData)
-            return newState
-        })
+        if(mode){
+            newData.id = Math.random().toString()
+            setAllExperiences(prevState => {
+                if(prevState.length === 0){
+                    return [newData]
+                }
+                const newState = [...prevState]
+                newState.push(newData)
+                return newState
+            })
+        }
+        else{
+            setAllExperiences(prevState => {
+                return prevState.map(data => {
+                    if(data.id === id){
+                        return {
+                            id: data.id,
+                            ...newData
+                        }
+                    }
+                    return data
+                })
+            })
+        }
         setActive(true)
     }
 
     const addPosition = () => {
         setActive(false)
         clearAllStates()
+        setMode(true)
     }
     
     const clearAllStates = () => {
@@ -122,7 +169,7 @@ function InputPersonalInfo() {
             </DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    Looks like you haven't entered any work experience. We recommend that you at least enter your past Position and Company.
+                    Looks like you haven't entered any work experience. We recommend that you at least enter your past Position and Company. Click on 'Skip' to skip this section.
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
@@ -134,7 +181,12 @@ function InputPersonalInfo() {
             <Typography variant="h2">Experience</Typography>
             <Typography variant="body1" gutterBottom>List your work experience, from the most recent to the oldest.</Typography>
             {active ? 
-                <List allExperiences={allExperiences} setAllExperiences={setAllExperiences}/> : 
+                <List
+                    id="exp"
+                    allExperiences={allExperiences} 
+                    setAllExperiences={setAllExperiences}
+                    edit={editExperience}
+                /> : 
                 <div className='two-col-grid form-personal wt-70'>
                     <div className="two-col-grid-item">
                         <TextField 

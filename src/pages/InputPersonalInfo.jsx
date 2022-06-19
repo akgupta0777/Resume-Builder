@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
-function InputPersonalInfo() {
+function InputPersonalInfo(props) {
     const {personalInfo, setPersonalInfo} = useResumeContext()
-    
+    const location = useLocation()
     const navigate = useNavigate()
+
     const [firstName, setFirstName] = useState(personalInfo.firstName)
     const [lastName, setLastName] = useState(personalInfo.lastName)
     const [address,setAddress] = useState(personalInfo.address)
@@ -26,7 +27,12 @@ function InputPersonalInfo() {
             email,
             phone
         })
-        navigate('/resume/experiences')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/experiences')
+        }
+
     }
 
   return (
