@@ -82,7 +82,11 @@ function InputPersonalInfo() {
     }
     
     const handleBack = () => {
-        navigate('/resume/personal-infos')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/personal-infos')
+        }
     }
     
     const save = () => {

@@ -97,7 +97,11 @@ function SkillSet() {
         }
     }
     const handleBack = () => {
-        navigate('/resume/educations')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/educations')
+        }
     }
 
   return (

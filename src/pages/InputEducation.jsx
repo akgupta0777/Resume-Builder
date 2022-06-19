@@ -71,7 +71,11 @@ function InputEducation() {
         }
     }
     const handleBack = () => {
-        navigate('/resume/experiences')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/experiences')
+        }
     }
 
     const save = () => {

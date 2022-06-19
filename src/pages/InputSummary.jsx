@@ -15,7 +15,11 @@ function InputSummary() {
         navigate('/resume/resume-preview')
     }
     const handleBack = () => {
-        navigate('/resume/skills')
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/resume/skills')
+        }
     }
   return (
     <>
