@@ -1,10 +1,14 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
 function InputSummary() {
+    useEffect(() => {
+        document.title = "Summary | Online Resume Builder"
+      }, [])
+
     const summaryContext =useResumeContext()
     const navigate = useNavigate()
     const location = useLocation()

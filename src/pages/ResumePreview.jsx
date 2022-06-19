@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import Classic from '../templates/Classic'
 import { Button, Typography } from '@mui/material'
@@ -13,6 +13,10 @@ import html2canvas from 'html2canvas';
 import { useResumeContext } from '../context/ResumeDataProvider';
 
 function ResumePreview() {
+    useEffect(() => {
+        document.title = "Preview | Online Resume Builder"
+      }, [])
+
     const {personalInfo, experiences, educations, skills, summary} = useResumeContext()
     const download = () => {
         let doc = document.querySelector('.template-container');

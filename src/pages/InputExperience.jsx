@@ -45,6 +45,10 @@ function InputPersonalInfo() {
     const [id, setId] = useState('')
 
     useEffect(() => {
+        document.title = "Experience | Online Resume Builder"
+      }, [])
+
+    useEffect(() => {
       setExperiences(allExperiences)
     }, [allExperiences, setExperiences])
     

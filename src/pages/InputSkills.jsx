@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import SkillSet from '../components/SkillSet';
 import { 
     Typography,
-    Button,
 } from '@mui/material'
 
 function InputSkills() {
-
+  useEffect(() => {
+    document.title = "Skills | Online Resume Builder"
+  }, [])
+  
   return (
     <>
         <Header />

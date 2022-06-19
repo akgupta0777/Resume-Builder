@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '../components/Header'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { 
@@ -22,6 +22,11 @@ import AddIcon from '@mui/icons-material/Add'
 const MAX_ED = 3
 
 function InputEducation() {
+
+    useEffect(() => {
+      document.title = "Education | Online Resume Builder"
+    }, [])
+    
     const {educations, setEducations} = useResumeContext()
     const navigate = useNavigate()
     const location = useLocation()

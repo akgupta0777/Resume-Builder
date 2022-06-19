@@ -1,10 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Typography, TextField, Button } from '@mui/material'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
 function InputPersonalInfo(props) {
+
+    useEffect(() => {
+        document.title = "Personal Information | Online Resume Builder"
+      }, [])
+
     const {personalInfo, setPersonalInfo} = useResumeContext()
     const location = useLocation()
     const navigate = useNavigate()
