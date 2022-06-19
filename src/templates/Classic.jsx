@@ -35,7 +35,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
     }
     {
       summary &&
-      <div className="summary">
+      <div className="summary classic">
         <h2>Summary</h2>
         <p>{summary}</p>
       </div>
@@ -43,7 +43,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       experiences.length > 0 &&
-      <div className="experiences" >
+      <div className="experiences classic" >
           <h2>Experiences</h2>
       {
       experiences.map(experience => {
@@ -63,12 +63,12 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       educations.length > 0 &&
-        <div className="educations">
+        <div className="educations classic">
             <h2>Education</h2>
       {educations.map(education => {
             return <div key={education.institute} className="education flex-container">
                     <div className="duration flex-1 left-align">
-                      <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month && `${education.graduation_date.month}.`} {education.graduation_date.year && ` - ${education.graduation_date.year}`}</>}</p>
+                      <p className="fn-bold">{education.currentStatus ? "Pursuing" : <>{education.graduation_date.month && `${education.graduation_date.month}.`} {education.graduation_date.year && ` ${education.graduation_date.year}`}</>}</p>
                       <p className="fn-bold">{education.state}</p>
                     </div>
                     <div className="work flex-2">
@@ -83,7 +83,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       skills.length > 0 &&
-      <div className="skills">
+      <div className="skills classic">
         <h2>Skills</h2>
         <div className="two-col-grid">
           {skills.map(data => {

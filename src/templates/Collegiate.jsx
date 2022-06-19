@@ -35,7 +35,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
     }
     {
       summary &&
-      <div className="summary">
+      <div className="summary collegiate">
         <h2>Summary</h2>
         <p>{summary}</p>
       </div>
@@ -43,7 +43,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       experiences.length > 0 &&
-      <div className="experiences" >
+      <div className="experiences collegiate" >
           <h2>Experiences</h2>
       {
       experiences.map(experience => {
@@ -63,7 +63,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       educations.length > 0 &&
-        <div className="educations">
+        <div className="educations collegiate">
             <h2>Education</h2>
       {educations.map(education => {
             return <div key={education.institute} className="education flex-container">
@@ -83,7 +83,7 @@ function Classic({personalInfo, experiences, educations, skills, summary}) {
 
     {
       skills.length > 0 &&
-      <div className="skills">
+      <div className="skills collegiate">
         <h2>Skills</h2>
         <div className="two-col-grid">
           {skills.map(data => {

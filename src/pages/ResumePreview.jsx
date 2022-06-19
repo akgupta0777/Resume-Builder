@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from '../components/Header'
 import Classic from '../templates/Classic'
+import Collegiate from '../templates/Collegiate'
 import { Button, Typography } from '@mui/material'
 import DownloadIcon from '@mui/icons-material/Download';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -37,7 +38,7 @@ function ResumePreview() {
     <>
         <Header />
         <div className="container preview-grid" style={{marginTop: "1.5em"}}>
-            <Classic 
+            <Collegiate
                 personalInfo={personalInfo}
                 experiences={experiences}
                 educations={educations}
