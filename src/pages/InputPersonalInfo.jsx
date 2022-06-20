@@ -40,6 +40,14 @@ function InputPersonalInfo(props) {
 
     }
 
+    const handleBack = () => {
+        if(location.state){
+            navigate('/resume/resume-preview')
+        }else{
+            navigate('/')
+        }
+    }
+
   return (
     <>
         <Header />
@@ -126,7 +134,10 @@ function InputPersonalInfo(props) {
                 </div>
             </div>
             <div className="back-or-save wt-70">
-                <Button variant="contained" disabled>BACK</Button>
+                <Button
+                    variant="contained"
+                    onClick={handleBack}
+                >BACK</Button>
                 <Button 
                     variant="contained" 
                     onClick={handleSaveAndNext}
