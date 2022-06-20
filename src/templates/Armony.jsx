@@ -1,40 +1,51 @@
 import React from "react";
 import '../App.css'
 import { levelsMap } from "../util";
+import HomeIcon from '@mui/icons-material/Home';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 
-function Collegiate({personalInfo, experiences, educations, skills, summary}) {
+function Armony({personalInfo, experiences, educations, skills, summary}) {
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&
-      <div className="personal-info">
+      <div className="personal-info armony">
       {personalInfo.firstName || personalInfo.lastName ? <h1>{personalInfo.firstName} {personalInfo.lastName}</h1> : null}
-      { personalInfo.phone && 
-        <div className="details flex-container">
-            <div className="flex-1"><p className="fn-bold">Phone:</p></div>
-            <div className="flex-4"><p>{personalInfo.phone}</p></div>
-        </div>
-      }
-      {
-        personalInfo.email && 
-        <div className="details flex-container">
-          <div className="flex-1"><p className="fn-bold">Email:</p></div>
-          <div className="flex-4"><p>{personalInfo.email}</p></div>
-        </div>
-      }
-      {
-        personalInfo.address ||
-        personalInfo.city ||
-        personalInfo.country ?
-        <div className="details flex-container">
-          <div className="flex-1"><p className="fn-bold">Address</p></div>
-          <div className="flex-4"><p>{personalInfo.address}, {personalInfo.city}, {personalInfo.country}</p></div>
-        </div> : null
-      }
+      <div className="flex-container" style={{justifyContent: 'space-between'}}>
+        {
+              personalInfo.address ||
+              personalInfo.city ||
+              personalInfo.country ?
+              <div className="details flex-container" style={{alignItems: 'center', gap: 5}}>
+              <div><p className="fn-bold">
+                <HomeIcon sx={{ color: '#4991d8' }} />
+              </p></div>
+              <div><p>{personalInfo.address}, {personalInfo.city}, {personalInfo.country}</p></div>
+              </div> : null
+        }
+        { personalInfo.phone && 
+            <div className="details flex-container" style={{alignItems: 'center', gap: 5}}>
+                <div><p>
+                    <PhoneIcon sx={{ color: '#4991d8' }}  />
+                </p></div>
+                <div><p>{personalInfo.phone}</p></div>
+            </div>
+        }
+        {
+            personalInfo.email && 
+            <div className="details flex-container" style={{alignItems: 'center', gap: 5}}>
+            <div><p className="fn-bold">
+                <EmailIcon sx={{ color: '#4991d8' }} />
+            </p></div>
+            <div><p>{personalInfo.email}</p></div>
+            </div>
+        }
+      </div>
     </div>
     }
     {
       summary &&
-      <div className="summary collegiate">
+      <div className="summary armony">
         <h2>Summary</h2>
         <p>{summary}</p>
       </div>
@@ -42,7 +53,7 @@ function Collegiate({personalInfo, experiences, educations, skills, summary}) {
 
     {
       experiences.length > 0 &&
-      <div className="experiences collegiate" >
+      <div className="experiences armony" >
           <h2>Experiences</h2>
       {
       experiences.map(experience => {
@@ -62,7 +73,7 @@ function Collegiate({personalInfo, experiences, educations, skills, summary}) {
 
     {
       educations.length > 0 &&
-        <div className="educations collegiate">
+        <div className="educations armony">
             <h2>Education</h2>
       {educations.map(education => {
             return <div key={education.institute} className="education flex-container">
@@ -82,7 +93,7 @@ function Collegiate({personalInfo, experiences, educations, skills, summary}) {
 
     {
       skills.length > 0 &&
-      <div className="skills collegiate">
+      <div className="skills armony">
         <h2>Skills</h2>
         <div className="two-col-grid">
           {skills.map(data => {
@@ -97,4 +108,4 @@ function Collegiate({personalInfo, experiences, educations, skills, summary}) {
   </div>;
 }
 
-export default Collegiate;
+export default Armony;

@@ -3,7 +3,6 @@ import '../App.css'
 import { levelsMap } from "../util";
 
 function Classic({personalInfo, experiences, educations, skills, summary}) {
-  console.log(experiences);
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&

@@ -188,4 +188,32 @@
   padding: 10px;
 }
 
+.summary.armony h2,
+.educations.armony h2,
+.experiences.armony h2,
+.skills.armony h2
+{
+  background: #4991d8;
+  padding: 10px 20px;
+  color: rgb(254, 252, 250);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.personal-info.armony > .flex-container
+{
+  border-top: 0.5px solid rgba(0, 0, 0, 0.25);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+  padding: 1em 0;
+
+}
+.personal-info.armony h1
+{
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #4991d8;
+  margin-bottom: 0.8em;
+}
+
 
