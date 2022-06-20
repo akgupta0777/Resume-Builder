@@ -22,9 +22,9 @@ function Header() {
         </NavLink>
       </div>
       <div className="navigate">
-        <div>
+        {/* <div>
           <Button variant='outlined' >Sign in</Button>
-        </div>
+        </div> */}
         {
           location.pathname === "/" &&
         <div className="buildResume">
