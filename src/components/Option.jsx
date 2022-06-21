@@ -59,6 +59,14 @@ function Option() {
               <ListItemText primary="Summary" />
             </ListItemButton>
           </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("../resume/choose-templates", {state : { key: "wditwrh"}})}>
+                <ListItemIcon>
+                <ModeEditOutlineIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Change Template" />
+            </ListItemButton>
+          </ListItem>
         </List>
       </nav>
     </Box>

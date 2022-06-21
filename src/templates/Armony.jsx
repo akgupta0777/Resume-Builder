@@ -4,8 +4,10 @@ import HomeIcon from '@mui/icons-material/Home';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import { Rating } from "@mui/material";
+import { useResumeContext } from "../context/ResumeDataProvider";
 
-function Armony({personalInfo, experiences, educations, skills, summary}) {
+function Armony() {
+  const {personalInfo, experiences, educations, skills, summary} = useResumeContext()
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&

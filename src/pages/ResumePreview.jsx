@@ -19,7 +19,8 @@ function ResumePreview() {
         document.title = "Preview | Online Resume Builder"
       }, [])
 
-    const {personalInfo, experiences, educations, skills, summary} = useResumeContext()
+    const {templateId} = useResumeContext()
+
     const download = () => {
         let doc = document.querySelector('.template-container');
         html2canvas(doc)
@@ -39,13 +40,15 @@ function ResumePreview() {
     <>
         <Header />
         <div className="container preview-grid" style={{marginTop: "1.5em"}}>
-            <Armony
-                personalInfo={personalInfo}
-                experiences={experiences}
-                educations={educations}
-                skills={skills}
-                summary={summary}
-            />
+            {
+                templateId === "classic" ?
+                    <Classic /> :
+                    templateId === "collegiate" ?
+                        <Collegiate /> :
+                        templateId === "armony" ?
+                            <Armony /> :
+                                <Classic />
+            }
             <div className="download">
                 <Button
                     variant='contained'

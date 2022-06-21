@@ -11,7 +11,7 @@ function Header() {
 
   const handleClick = () => {
     clearContext()
-    navigate("/resume/personal-infos")
+    navigate("/resume/choose-templates")
   }
 
   return (

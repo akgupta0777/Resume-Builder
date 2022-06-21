@@ -1,8 +1,10 @@
 import React from "react";
 import '../App.css'
 import { levelsMap } from "../util";
+import { useResumeContext } from "../context/ResumeDataProvider";
 
-function Classic({personalInfo, experiences, educations, skills, summary}) {
+function Classic() {
+  const {personalInfo, experiences, educations, skills, summary} = useResumeContext()
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&

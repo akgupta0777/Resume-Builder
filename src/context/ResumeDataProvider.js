@@ -7,6 +7,7 @@ export const useResumeContext = () => {
 };
 
 function ResumeDataProvider({ children }) {
+  const [templateId, setTemplateId] = useState("classic");
   const [personalInfo, setPersonalInfo] = useState({});
   const [summary, setSummary] = useState("");
   const [educations, setEducations] = useState([]);
@@ -34,6 +35,8 @@ function ResumeDataProvider({ children }) {
         setSummary,
         skills,
         setSkills,
+        templateId,
+        setTemplateId,
         clearContext,
       }}
     >

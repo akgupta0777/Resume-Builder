@@ -44,7 +44,7 @@ function InputPersonalInfo(props) {
         if(location.state){
             navigate('/resume/resume-preview')
         }else{
-            navigate('/')
+            navigate('/resume/choose-templates')
         }
     }
 

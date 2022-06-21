@@ -10,7 +10,7 @@ function Hero() {
 
     const handleClick = () => {
         clearContext()
-        navigate("/resume/personal-infos")
+        navigate("/resume/choose-templates")
       }
       
   return (
