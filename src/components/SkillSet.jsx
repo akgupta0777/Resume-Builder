@@ -85,9 +85,9 @@ function SkillSet() {
     }
 
     const handleSaveAndNext = () => {
-        const exist = skills.filter(data => data.skill || data.level)
-        exist.length > 0 ?
-            setSkillsContext.setSkills(skills) :
+        const data = skills.filter(data => data.skill || data.level)
+        data.length > 0 ?
+            setSkillsContext.setSkills(data) :
             setSkillsContext.setSkills([])
         
         if(location.state){

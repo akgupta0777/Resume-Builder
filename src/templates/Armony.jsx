@@ -99,12 +99,15 @@ function Armony() {
             return <div className="two-col-grid-item flex-container skill" key={data.skill_id}>
               <p className="fn-bold">{data.skill}</p>
               <p>
-                <Rating
+                {
+                  data.level && 
+                  <Rating
                   name="read-only"
                   value={data.level}
                   size='small'
                   readOnly
-                />
+                  />
+                }
               </p>
             </div>
           })}
