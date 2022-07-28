@@ -30,7 +30,7 @@ function ResumePreview() {
                 let width = pdf.internal.pageSize.getWidth()
                 let height = pdf.internal.pageSize.getHeight()
                 pdf.addImage(imgData, 'PNG', 0, 0, width, height)
-                pdf.save('resume.pdf')
+                pdf.save(`resume${Math.floor(Math.random() * 10000)}.pdf`)
         }).catch(error =>{
             console.log('Error', error);
         })
