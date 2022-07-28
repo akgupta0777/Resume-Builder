@@ -50,8 +50,8 @@ export const months = [
 ];
 
 const years = [];
-const currentYear = new Date().getFullYear();
-for (let y = 1970; y <= currentYear; y++) {
+// const currentYear = new Date().getFullYear();
+for (let y = 1970; y <= 2050; y++) {
   years.push({ value: y, label: `${y}` });
 }
 export { years };
