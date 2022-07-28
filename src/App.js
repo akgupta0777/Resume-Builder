@@ -10,6 +10,7 @@ import InputSkills from "./pages/InputSkills";
 import InputSummary from "./pages/InputSummary";
 import ResumePreview from "./pages/ResumePreview";
 import ResumeDataProvider from "./context/ResumeDataProvider";
+import InputProjects from "./pages/InputProjects";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               element={<InputPersonalInfo />}
             />
             <Route path="resume/experiences" element={<InputExperience />} />
+            <Route path="resume/projects" element={<InputProjects />} />
             <Route path="resume/educations" element={<InputEducation />} />
             <Route path="resume/skills" element={<InputSkills />} />
             <Route path="resume/summary" element={<InputSummary />} />

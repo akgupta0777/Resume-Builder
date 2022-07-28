@@ -13,8 +13,8 @@ function Option() {
     const navigate = useNavigate()
   return (
     <Box sx={{ width: '100%', marginTop: "-20px" }}>
-      <nav aria-label="secondary mailbox folders">
-        <List>
+      <nav aria-label="secondary mailbox folders" style={{ height: 200, overflowY: 'auto' }}>
+        <List >
           <ListItem disablePadding>
             <ListItemButton onClick={() => navigate("../resume/personal-infos", {state : { key: "nvheins"}})}>
               <ListItemIcon>
@@ -30,6 +30,15 @@ function Option() {
                 <ModeEditOutlineIcon/>
               </ListItemIcon>
               <ListItemText primary="Experiences" />
+            </ListItemButton>
+          </ListItem>
+          <Divider />
+          <ListItem disablePadding>
+            <ListItemButton onClick={() => navigate("../resume/projects", {state : { key: "wqoneqo"}})}>
+                <ListItemIcon>
+                <ModeEditOutlineIcon/>
+              </ListItemIcon>
+              <ListItemText primary="Projects" />
             </ListItemButton>
           </ListItem>
           <Divider />
@@ -59,6 +68,7 @@ function Option() {
               <ListItemText primary="Summary" />
             </ListItemButton>
           </ListItem>
+          <Divider />
           <ListItem disablePadding>
             <ListItemButton onClick={() => navigate("../resume/choose-templates", {state : { key: "wditwrh"}})}>
                 <ListItemIcon>

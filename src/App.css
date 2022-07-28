@@ -59,7 +59,8 @@
 .summary,
 .experiences,
 .educations,
-.skills
+.skills,
+.projects
 {
   margin-bottom: 3.25em;
 }
@@ -67,7 +68,9 @@
 .summary h2,
 .experiences h2,
 .educations h2,
-.skills h2{
+.skills h2,
+.projects h2
+{
   font-size: 22px;
   font-weight: 500;
   text-transform: uppercase;
@@ -80,7 +83,8 @@
 .summary.classic h2::before,
 .experiences.classic h2::before,
 .educations.classic h2::before,
-.skills.classic h2::before
+.skills.classic h2::before,
+.projects.classic h2::before
 {
   width: 100%;
   height: 0.5px;
@@ -92,7 +96,8 @@
 }
 
 .experience,
-.education
+.education,
+.project
 {
   gap: 1.25em;
   margin-bottom: 1.5em;
@@ -171,6 +176,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5em;
+  min-height: 100vh;
 }
 
 .download{
@@ -186,7 +192,8 @@
 .summary.collegiate h2,
 .educations.collegiate h2,
 .experiences.collegiate h2,
-.skills.collegiate h2
+.skills.collegiate h2,
+.projects.collegiate h2
 {
   background: #80808075;
   padding: 10px;
@@ -195,7 +202,8 @@
 .summary.armony h2,
 .educations.armony h2,
 .experiences.armony h2,
-.skills.armony h2
+.skills.armony h2,
+.projects.armony h2
 {
   background: #4991d8;
   padding: 10px 20px;
@@ -221,7 +229,8 @@
 }
 
 .experiences.armony .experience,
-.educations.armony .education
+.educations.armony .education,
+.projects.armony .project
 {
   padding-left: 20px;
 }
@@ -245,4 +254,16 @@
 .image img{
   width: 100%;
   height: 500px;
+}
+
+.project a{
+  font-size: 15px;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.projects.classic a,
+.projects.collegiate a
+{
+  color: #5d5d5d;
 }

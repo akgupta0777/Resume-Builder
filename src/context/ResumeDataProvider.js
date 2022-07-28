@@ -12,6 +12,7 @@ function ResumeDataProvider({ children }) {
   const [summary, setSummary] = useState("");
   const [educations, setEducations] = useState([]);
   const [experiences, setExperiences] = useState([]);
+  const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState([]);
 
   const clearContext = () => {
@@ -19,6 +20,7 @@ function ResumeDataProvider({ children }) {
     setSummary("");
     setEducations([]);
     setExperiences([]);
+    setProjects([]);
     setSkills([]);
   };
 
@@ -31,6 +33,8 @@ function ResumeDataProvider({ children }) {
         setEducations,
         experiences,
         setExperiences,
+        projects,
+        setProjects,
         summary,
         setSummary,
         skills,

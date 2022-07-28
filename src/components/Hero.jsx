@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, Button } from '@mui/material'
-import illustration2 from '../assets/illustration2.svg'
+import illustration from '../assets/illustration.png'
 import { useNavigate } from 'react-router-dom'
 import { useResumeContext } from '../context/ResumeDataProvider'
 
@@ -36,7 +36,7 @@ function Hero() {
             </div>
             <div className="two-col-grid-item" style={{display: "grid", placeItems: "center"}}>
                 <img 
-                    src={illustration2} 
+                    src={illustration} 
                     alt="illustration" 
                     style={{width: "100%", height: "auto"}}
 

@@ -4,7 +4,7 @@ import { levelsMap } from "../util";
 import { useResumeContext } from "../context/ResumeDataProvider";
 
 function Collegiate() {
-  const {personalInfo, experiences, educations, skills, summary} = useResumeContext()
+  const {personalInfo, experiences, projects, educations, skills, summary} = useResumeContext()
   return <div className="template-container classic">
     {
       Object.keys(personalInfo).length > 0 &&
@@ -59,6 +59,30 @@ function Collegiate() {
             </div>
           </div>
       })}
+        </div>
+    }
+
+  {
+      projects.length > 0 &&
+      <div className="projects collegiate" >
+          <h2>Projects</h2>
+      {
+        projects.map(project => {
+          return <div key={project.id} className="project">
+              <div style={{marginBottom: 10}}>
+                <p style={{fontSize: 16, fontWeight: 700}}>{project.projectTitle}</p>
+                <a
+                  className="primary"
+                  href={project.projectUrl}
+                  target="_blank"
+                  >{project.projectUrl}</a>
+              </div>
+              <div>
+                <pre style={{fontSize: 14}}>{project.description}</pre>
+              </div>
+            </div>
+        })
+      }
         </div>
     }
 

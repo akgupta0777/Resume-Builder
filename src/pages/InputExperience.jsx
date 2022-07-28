@@ -81,7 +81,7 @@ function InputPersonalInfo() {
         if(location.state){
             navigate('/resume/resume-preview')
         }else{
-            navigate('/resume/educations')
+            navigate('/resume/projects')
         }
     }
     

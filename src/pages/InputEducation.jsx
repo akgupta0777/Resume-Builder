@@ -79,7 +79,7 @@ function InputEducation() {
         if(location.state){
             navigate('/resume/resume-preview')
         }else{
-            navigate('/resume/experiences')
+            navigate('/resume/projects')
         }
     }
 
