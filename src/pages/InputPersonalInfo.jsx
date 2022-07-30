@@ -61,7 +61,6 @@ function InputPersonalInfo(props) {
                         label="First name" 
                         id="outlined-size-normal" 
                         size="small"
-                        autoComplete='off'
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
                     />
@@ -71,8 +70,7 @@ function InputPersonalInfo(props) {
                         fullWidth 
                         label="Last name" 
                         id="outlined-size-normal" 
-                        size="small" 
-                        autoComplete='off'
+                        size="small"
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}
                     />
@@ -83,7 +81,6 @@ function InputPersonalInfo(props) {
                         label="Address" 
                         id="outlined-size-normal" 
                         size="small"
-                        autoComplete='off'
                         value={address}
                         onChange={e => setAddress(e.target.value)}
                     />
@@ -94,7 +91,6 @@ function InputPersonalInfo(props) {
                         label="City" 
                         id="outlined-size-normal" 
                         size="small"
-                        autoComplete='off'
                         value={city}
                         onChange={e => setCity(e.target.value)}
                     />
@@ -105,7 +101,6 @@ function InputPersonalInfo(props) {
                         label="Country" 
                         id="outlined-size-normal" 
                         size="small" 
-                        autoComplete='off'
                         value={country}
                         onChange={e => setCountry(e.target.value)}
                         />
@@ -115,8 +110,7 @@ function InputPersonalInfo(props) {
                         fullWidth 
                         label="Email address" 
                         id="outlined-size-normal" 
-                        size="small" 
-                        autoComplete='off'
+                        size="small"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
@@ -126,8 +120,7 @@ function InputPersonalInfo(props) {
                         fullWidth 
                         label="Phone" 
                         id="outlined-size-normal" 
-                        size="small" 
-                        autoComplete='off'
+                        size="small"
                         value={phone}
                         onChange={e => setPhone(e.target.value)}
                     />

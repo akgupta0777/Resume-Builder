@@ -202,7 +202,6 @@ function InputPersonalInfo() {
                             label="Company" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={company}
                             onChange={e => setCompany(e.target.value)}
                         />
@@ -213,7 +212,6 @@ function InputPersonalInfo() {
                             label="Job title" 
                             id="outlined-size-normal"
                             size="small"
-                            autoComplete='off'
                             value={jobTitle}
                             onChange={e => setJobTitle(e.target.value)}
                         />
@@ -224,7 +222,6 @@ function InputPersonalInfo() {
                             label="City" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={city}
                             onChange={e => setCity(e.target.value)}
                         />
@@ -234,7 +231,6 @@ function InputPersonalInfo() {
                             fullWidth label="State" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={state}
                             onChange={e => setState(e.target.value)}
                         />

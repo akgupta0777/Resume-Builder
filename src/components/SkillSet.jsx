@@ -15,6 +15,7 @@ function SkillSet() {
     const setSkillsContext = useResumeContext()
     const navigate = useNavigate()
     const location = useLocation()
+
     useEffect(() => {
       setSkillsContext.skills.length > 0 &&
         setSkills(setSkillsContext.skills.map(data => {
@@ -116,7 +117,6 @@ function SkillSet() {
                             label="Skill"
                             id="outlined-size-normal"
                             size="small"
-                            autoComplete='off'
                             value={skillItem.skill}
                             onChange={e => handleSkill(e, skillItem.skill_id)}
                         />

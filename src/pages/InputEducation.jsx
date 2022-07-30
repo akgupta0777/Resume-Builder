@@ -185,7 +185,6 @@ function InputEducation() {
                             label="School/Institute" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={institute}
                             onChange={e => setInstitute(e.target.value)}
                         />
@@ -196,7 +195,6 @@ function InputEducation() {
                             label="City" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={city}
                             onChange={e => setCity(e.target.value)}
                         />
@@ -207,7 +205,6 @@ function InputEducation() {
                             label="State" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={state}
                             onChange={e => setState(e.target.value)}
                         />
@@ -218,7 +215,6 @@ function InputEducation() {
                             label="Qualification" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={degree}
                             onChange={e => setDegree(e.target.value)}
                         />
@@ -229,7 +225,6 @@ function InputEducation() {
                             label="Field of Study" 
                             id="outlined-size-normal" 
                             size="small"
-                            autoComplete='off'
                             value={field}
                             onChange={e => setField(e.target.value)}
                         />

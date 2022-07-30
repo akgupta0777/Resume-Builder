@@ -163,7 +163,6 @@ function InputProjects() {
                                 label="Project Title" 
                                 id="outlined-size-normal" 
                                 size="small"
-                                autoComplete='off'
                                 value={projectTitle}
                                 onChange={e => setProjectTitle(e.target.value)}
                             />
@@ -177,7 +176,6 @@ function InputProjects() {
                                 label="Project URL" 
                                 id="outlined-size-normal"
                                 size="small"
-                                autoComplete='off'
                                 value={projectUrl}
                                 onChange={e => setProjectUrl(e.target.value)}
                             />
