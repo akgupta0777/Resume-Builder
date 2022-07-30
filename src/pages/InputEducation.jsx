@@ -183,7 +183,7 @@ function InputEducation() {
                         <TextField 
                             fullWidth 
                             label="School/Institute" 
-                            id="outlined-size-normal" 
+                            id="school" 
                             size="small"
                             value={institute}
                             onChange={e => setInstitute(e.target.value)}
@@ -193,7 +193,7 @@ function InputEducation() {
                         <TextField 
                             fullWidth 
                             label="City" 
-                            id="outlined-size-normal" 
+                            id="city" 
                             size="small"
                             value={city}
                             onChange={e => setCity(e.target.value)}
@@ -203,7 +203,7 @@ function InputEducation() {
                         <TextField 
                             fullWidth
                             label="State" 
-                            id="outlined-size-normal" 
+                            id="state" 
                             size="small"
                             value={state}
                             onChange={e => setState(e.target.value)}
@@ -213,7 +213,7 @@ function InputEducation() {
                         <TextField 
                             fullWidth
                             label="Qualification" 
-                            id="outlined-size-normal" 
+                            id="qualification" 
                             size="small"
                             value={degree}
                             onChange={e => setDegree(e.target.value)}
@@ -223,7 +223,7 @@ function InputEducation() {
                         <TextField 
                             fullWidth
                             label="Field of Study" 
-                            id="outlined-size-normal" 
+                            id="field" 
                             size="small"
                             value={field}
                             onChange={e => setField(e.target.value)}

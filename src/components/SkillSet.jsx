@@ -115,7 +115,7 @@ function SkillSet() {
                         <TextField 
                             fullWidth 
                             label="Skill"
-                            id="outlined-size-normal"
+                            id="skill"
                             size="small"
                             value={skillItem.skill}
                             onChange={e => handleSkill(e, skillItem.skill_id)}

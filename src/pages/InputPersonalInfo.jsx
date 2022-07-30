@@ -59,7 +59,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="First name" 
-                        id="outlined-size-normal" 
+                        id="first-name" 
                         size="small"
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
@@ -69,7 +69,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="Last name" 
-                        id="outlined-size-normal" 
+                        id="last-name" 
                         size="small"
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}
@@ -79,7 +79,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="Address" 
-                        id="outlined-size-normal" 
+                        id="address" 
                         size="small"
                         value={address}
                         onChange={e => setAddress(e.target.value)}
@@ -89,7 +89,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="City" 
-                        id="outlined-size-normal" 
+                        id="city" 
                         size="small"
                         value={city}
                         onChange={e => setCity(e.target.value)}
@@ -99,7 +99,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="Country" 
-                        id="outlined-size-normal" 
+                        id="country" 
                         size="small" 
                         value={country}
                         onChange={e => setCountry(e.target.value)}
@@ -109,7 +109,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="Email address" 
-                        id="outlined-size-normal" 
+                        id="email" 
                         size="small"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
@@ -119,7 +119,7 @@ function InputPersonalInfo(props) {
                     <TextField 
                         fullWidth 
                         label="Phone" 
-                        id="outlined-size-normal" 
+                        id="phone" 
                         size="small"
                         value={phone}
                         onChange={e => setPhone(e.target.value)}

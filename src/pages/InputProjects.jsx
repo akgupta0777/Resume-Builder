@@ -161,7 +161,7 @@ function InputProjects() {
                             <TextField 
                                 fullWidth 
                                 label="Project Title" 
-                                id="outlined-size-normal" 
+                                id="project-title" 
                                 size="small"
                                 value={projectTitle}
                                 onChange={e => setProjectTitle(e.target.value)}
@@ -174,7 +174,7 @@ function InputProjects() {
                                     startAdornment: <InputAdornment position="start">https://</InputAdornment>,
                                 }}
                                 label="Project URL" 
-                                id="outlined-size-normal"
+                                id="project-url"
                                 size="small"
                                 value={projectUrl}
                                 onChange={e => setProjectUrl(e.target.value)}

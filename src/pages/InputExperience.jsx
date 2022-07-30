@@ -200,7 +200,7 @@ function InputPersonalInfo() {
                         <TextField 
                             fullWidth 
                             label="Company" 
-                            id="outlined-size-normal" 
+                            id="company" 
                             size="small"
                             value={company}
                             onChange={e => setCompany(e.target.value)}
@@ -210,7 +210,7 @@ function InputPersonalInfo() {
                         <TextField 
                             fullWidth 
                             label="Job title" 
-                            id="outlined-size-normal"
+                            id="job-title"
                             size="small"
                             value={jobTitle}
                             onChange={e => setJobTitle(e.target.value)}
@@ -220,7 +220,7 @@ function InputPersonalInfo() {
                         <TextField 
                             fullWidth 
                             label="City" 
-                            id="outlined-size-normal" 
+                            id="city" 
                             size="small"
                             value={city}
                             onChange={e => setCity(e.target.value)}
@@ -229,7 +229,7 @@ function InputPersonalInfo() {
                     <div className="two-col-grid-item">
                         <TextField 
                             fullWidth label="State" 
-                            id="outlined-size-normal" 
+                            id="state" 
                             size="small"
                             value={state}
                             onChange={e => setState(e.target.value)}
