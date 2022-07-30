@@ -109,6 +109,8 @@
 }
 
 .two-col-grid{
+  max-width: 1000px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -121,6 +123,12 @@
 
 .skill:nth-child(2n + 1){
   border-right: 0.5px solid rgba(0, 0, 0, 0.55);
+}
+
+.container,
+.header{
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .header{
@@ -167,6 +175,7 @@
 }
 
 .back-or-save{
+  max-width: 1000px;
   margin: 3em auto;
   display: flex;
   justify-content: space-between;
