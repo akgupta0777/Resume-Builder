@@ -26,7 +26,7 @@ function SkillSet() {
             }
         }))
     
-    }, [])
+    }, [setSkillsContext.skills])
     
     const [skills, setSkills] = useState([
         {
