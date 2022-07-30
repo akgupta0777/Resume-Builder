@@ -75,6 +75,7 @@ function Collegiate() {
                   className="primary"
                   href={project.projectUrl}
                   target="_blank"
+                  rel="noreferrer"
                   >{project.projectUrl}</a>
               </div>
               <div>
